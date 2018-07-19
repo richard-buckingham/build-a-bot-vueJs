@@ -6,11 +6,11 @@
       Add to cart...
     </button>
     <div class="top-row">
-        <div class="robot-name">
+<!--         <div class="robot-name">
           {{selectedRobot.head.title}}
           <span v-if="selectedRobot.head.onSale"
                 class="sale">Sale!</span>
-        </div>
+        </div> -->
         <PartSelector />
     </div>
     <div class="middle-row">
