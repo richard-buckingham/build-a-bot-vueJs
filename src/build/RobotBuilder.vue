@@ -6,21 +6,18 @@
       Add to cart...
     </button>
     <div class="top-row">
-      <div :class="[saleBorderClass, 'top', 'part']">
         <div class="robot-name">
           {{selectedRobot.head.title}}
           <span v-if="selectedRobot.head.onSale"
                 class="sale">Sale!</span>
         </div>
-        <img :src="selectedRobot.head.src" title="head"/>
-        <button @click="selectPreviousHead()" class="prev-selector">&#9668;</button>
-        <button @click="selectNextHead()" class="next-selector">&#9658;</button>
-      </div>
+        <PartSelector />
     </div>
     <div class="middle-row">
       <PartSelector />
       <PartSelector />
       <PartSelector />
+    </div>
     <div class="bottom-row">
       <PartSelector />
     </div>
@@ -56,7 +53,7 @@ import PartSelector from './PartSelector.vue';
 
 export default {
   name: 'RobotBuilder',
-  components: [PartSelector],
+  components: { PartSelector },
   created() {
     console.log('component created');
   },
@@ -99,12 +96,6 @@ export default {
 
       this.cart.push(Object.assign({}, robot, { cost }));
       console.log('this.cart[0] = ', this.cart[0]);
-    },
-    selectPreviousTorso() {
-      this.selectedTorsoIndex = getPreviousValidIndex(
-        this.selectedTorsoIndex,
-        availableParts.torsos.length,
-      );
     },
   },
 };
