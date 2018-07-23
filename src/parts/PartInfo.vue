@@ -13,13 +13,19 @@ import parts from '../data/parts';
 
 export default {
   name: 'PartInfo',
+  props: {
+    partType: { type: String },
+    id: {
+      type: [Number, String],
+      validator(value) {
+        return Number.isInteger(Number(value));
+      },
+    },
+  },
   computed: {
     part() {
-      // const partType = this.$route.params.partType;
-      // const id = this.$route.params.id;
-
       // prefer destructuring
-      const { partType, id } = this.$route.params;
+      const { partType, id } = this;
       console.log('partType = ', partType);
       console.log('id = ', id);
 

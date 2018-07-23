@@ -24,6 +24,7 @@ export default new Router({
       path: '/parts/:partType/:id',
       name: 'Parts',
       component: PartInfo,
+      props: true, // pass the route params as props, not as route.params in the component
     },
   ],
 });
