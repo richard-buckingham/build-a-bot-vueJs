@@ -20,14 +20,6 @@
                 Build
             </router-link>
           </li>
-          <li class="nav-item">
-            <router-link
-              class="nav-link"
-              :to="{name: 'Parts'}"
-              exact>
-                Parts
-            </router-link>
-          </li>
         </ul>
       </nav>
     </header>
