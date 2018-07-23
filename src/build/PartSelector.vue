@@ -52,7 +52,11 @@ export default {
   },
   methods: {
     showPartInfo() {
-      this.$router.push('/parts');
+      console.log('navigating to the parts page');
+      this.$router.push({
+        name: 'Parts',
+        params: { id: this.selectedPart.id, partType: this.selectedPart.type },
+      });
     },
     emitSelectedPart() {
       console.log('emitting partSelected');
